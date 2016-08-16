@@ -15,15 +15,14 @@ angela = Customer.create(name: "Angela", email:"angela@me.com", password:"passwo
 
 Product.delete_all
 
-Product.create(name: "MacBook", reference_number: 123)
-Product.create(name: "MacBookAir", reference_number: 456)
-Product.create(name: "Airportk", reference_number: 789)
+macbook = Product.create(name: "MacBook", reference_number: 123)
+macbookair = Product.create(name: "MacBookAir", reference_number: 456)
+airportk = Product.create(name: "Airportk", reference_number: 789)
 
 Order.delete_all
 
-Order.create(customer: ab, deliveryaddress: "Amsterdam", status: "open", products: Product.where(name: "MacBook"))
-Order.create(customer: angela, deliveryaddress: "Hoorn", status: "open", products: Product.where(name: "MacBookAir"))
-
+order1 = Order.create(customer: ab, deliveryaddress: "Amsterdam", status: "open")
+Orderitem.create(order: order1, product: macbook, quantity: 1)
 
 
 #, products: Product.where(name: "MacBook")
