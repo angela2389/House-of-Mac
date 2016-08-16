@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815185926) do
+ActiveRecord::Schema.define(version: 20160816073652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 20160815185926) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_customers_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "orderitems", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.integer  "total_price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["product_id"], name: "index_orderitems_on_product_id", using: :btree
   end
 
   create_table "orders", force: :cascade do |t|
@@ -53,5 +62,6 @@ ActiveRecord::Schema.define(version: 20160815185926) do
     t.datetime "updated_at",       null: false
   end
 
+  add_foreign_key "orderitems", "products"
   add_foreign_key "orders", "customers"
 end
