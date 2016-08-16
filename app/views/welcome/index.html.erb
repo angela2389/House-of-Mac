@@ -16,8 +16,13 @@
     <div class="navbar">
       <ul>
         <li>Home</li>
-        <li>shop</li>
-        <li>log in</li>
+        <li><a href="products">Shop</a></li>
+        <% if !customer_signed_in? %>
+          <li><%= link_to "Log In", new_customer_session_path %></li>
+        <% else %>
+          <li><span class="login-text"><%= current_customer.email %></span></li>
+          <li><%= link_to "Log Out", destroy_customer_session_path, :method => :delete %></li>
+        <% end %>
       </ul>
     </div>
 
