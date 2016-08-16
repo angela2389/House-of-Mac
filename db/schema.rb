@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 20160816120242) do
 
   # These are extensions that must be enabled in order to support this database
-    enable_extension "plpgsql"
-    
+  enable_extension "plpgsql"
+
   create_table "customers", force: :cascade do |t|
     t.string   "name",                   default: "", null: false
     t.string   "email",                  default: "", null: false
