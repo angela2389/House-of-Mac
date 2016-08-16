@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160816073652) do
+ActiveRecord::Schema.define(version: 20160816120242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "customers", force: :cascade do |t|
+    t.string   "name",                   default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -32,17 +33,6 @@ ActiveRecord::Schema.define(version: 20160816073652) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "orderitems", force: :cascade do |t|
-    t.integer  "product_id"
-    t.integer  "order_id"
-    t.integer  "quantity"
-    t.integer  "total_price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["order_id"], name: "index_orderitems_on_order_id", using: :btree
-    t.index ["product_id"], name: "index_orderitems_on_product_id", using: :btree
-  end
-
   create_table "orders", force: :cascade do |t|
     t.integer  "customer_id"
     t.text     "deliveryaddress"
@@ -50,6 +40,13 @@ ActiveRecord::Schema.define(version: 20160816073652) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["customer_id"], name: "index_orders_on_customer_id", using: :btree
+  end
+
+  create_table "orders_products", id: false, force: :cascade do |t|
+    t.integer "order_id",    null: false
+    t.integer "product_id",  null: false
+    t.integer "quantity"
+    t.integer "total_price"
   end
 
   create_table "products", force: :cascade do |t|
@@ -64,7 +61,5 @@ ActiveRecord::Schema.define(version: 20160816073652) do
     t.datetime "updated_at",       null: false
   end
 
-  add_foreign_key "orderitems", "orders"
-  add_foreign_key "orderitems", "products"
   add_foreign_key "orders", "customers"
 end
