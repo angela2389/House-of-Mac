@@ -15,21 +15,21 @@ Customer.delete_all
 
 Product.delete_all
 
-Product.create(
+macbook = Product.create(
   reference_number: 123,
   name: "MacBook",
   sub_header: "13.3 inch | Intel Core i5 | 8 GB werkgeheugen | 128 GB SSD", description: "MacBook Air is voorzien van 8 GB geheugen, een Intel Core i5-processor van de vijfde generatie, Thunderbolt 2 en geweldige ingebouwde apps. En de batterij gaat een hele dag mee. Omdat ’ie zo dun, licht, duurzaam en tegelijkertijd heel krachtig is, kun je er letterlijk en figuurlijk nog meer kanten mee uit.",
   image: "https://s.s-bol.com/imgbase0/imagebase3/large/FC/2/5/7/5/9200000040495752.jpg",
   price: 1350
   )
-Product.create(
+macbookair = Product.create(
   reference_number: 456,
   name: "MacBookAir",
   sub_header: "Voorzien van een Nederlands qwertytoetsenbord. 13.3 inch | Intel Core i5 | 8 GB werkgeheugen | 128 GB SSD",
   description: "De 13-inch Apple MacBook Pro MF839N/A met Retina-display is de ideale laptop voor iedereen die op zoek is naar razendsnelle prestaties in een ongelooflijk compact en licht ontwerp. De verbluffende prestaties zijn te danken aan het gloednieuwe Force Touch-trackpad, Intel Core i5-processor van de vijfde generatie, snelle 128 GB Solid State Drive, 8 GB werkgeheugen, een indrukwekkende batterijduur en een schitterend Retina-display.",
   image: "https://s.s-bol.com/imgbase0/imagebase3/large/FC/2/0/9/8/9200000058048902.jpg", price: 1050
   )
-Product.create(
+airport = Product.create(
   reference_number: 789,
   name: "Airport",
   sub_header: "Apple AirPort Time Capsule - Router - AC1750 - 2TB ",
