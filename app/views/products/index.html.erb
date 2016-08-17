@@ -3,3 +3,5 @@
 <% @products.each do |product| %>
   <p><%= link_to product.name, product_path(product.id) %></p>
 <% end %>
+
+<%= link_to 'Back', root_path %>
