@@ -15,15 +15,10 @@
 
     <div class="navbar">
       <ul>
-        <li><a href="/">Home</a></li>
+        <li>Home</li>
         <li><a href="products">Shop</a></li>
-        <% if !customer_signed_in? %>
-          <li><%= link_to "Log In", new_customer_session_path %></li>
-        <% else %>
-          <li><span class="login-text"><%= current_customer.email %></span></li>
-          <li><%= link_to "Log Out", destroy_customer_session_path, :method => :delete %></li>
-        <% end %>
         <li><a href="cart">Cart</a></li>
+        <li><%= render 'layouts/cart_text' %></li>
       </ul>
     </div>
 

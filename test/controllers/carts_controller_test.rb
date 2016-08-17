@@ -1,7 +1,9 @@
 require 'test_helper'
 
-class CartsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+class CartsControllerTest < ActionController::TestCase
+  test "should get show" do
+    get :show
+    assert_response :success
+  end
+
 end

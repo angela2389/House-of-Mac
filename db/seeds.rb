@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Orderitem.delete_all
+OrderItem.delete_all
 Order.delete_all
 Product.delete_all
 Customer.delete_all
@@ -13,7 +13,7 @@ Customer.delete_all
   ab = Customer.create(name: "Ab", email:"ab@me.com", password:"password" )
   angela = Customer.create(name: "Angela", email:"angela@me.com", password:"password" )
 
-Product.delete_all
+
 
 macbook = Product.create(
   reference_number: 123,
@@ -58,10 +58,8 @@ airport = Product.create(
   )
 
 
-Order.delete_all
-
-order1 = Order.create(customer: ab, deliveryaddress: "Amsterdam", status: "open", totalprice: 20)
-Orderitem.create(order: order1, product: macbook, quantity: 1, subtotal: 10)
+order1 = Order.create(customer: ab, deliveryaddress: "Amsterdam", status: "open", total: 20)
+OrderItem.create(order: order1, product: macbook, quantity: 1, subtotal: 10)
 
 
 #, products: Product.where(name: "MacBook")

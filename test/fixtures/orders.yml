@@ -1,11 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  customer: one
-  deliveryaddress: MyText
-  status: MyString
+  subtotal: 9.99
+  tax: 9.99
+  shipping: 9.99
+  total: 9.99
+  order_status_id: 
 
 two:
-  customer: two
-  deliveryaddress: MyText
-  status: MyString
+  subtotal: 9.99
+  tax: 9.99
+  shipping: 9.99
+  total: 9.99
+  order_status_id: 

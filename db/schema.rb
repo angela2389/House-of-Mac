@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817062547) do
+ActiveRecord::Schema.define(version: 20160715152500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,25 +33,36 @@ ActiveRecord::Schema.define(version: 20160817062547) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "orderitems", force: :cascade do |t|
-    t.integer  "order_id"
+  create_table "order_items", force: :cascade do |t|
     t.integer  "product_id"
+    t.integer  "order_id"
+    t.decimal  "unit_price", precision: 12, scale: 3
     t.integer  "quantity"
-    t.integer  "subtotal"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_orderitems_on_order_id", using: :btree
-    t.index ["product_id"], name: "index_orderitems_on_product_id", using: :btree
+    t.decimal  "subtotal",   precision: 12, scale: 3
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["order_id"], name: "index_order_items_on_order_id", using: :btree
+    t.index ["product_id"], name: "index_order_items_on_product_id", using: :btree
+  end
+
+  create_table "order_statuses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "customer_id"
+    t.decimal  "subtotal",        precision: 12, scale: 3
+    t.decimal  "tax",             precision: 12, scale: 3
+    t.decimal  "shipping",        precision: 12, scale: 3
+    t.decimal  "total",           precision: 12, scale: 3
     t.text     "deliveryaddress"
-    t.string   "status"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "totalprice"
-    t.index ["customer_id"], name: "index_orders_on_customer_id", using: :btree
+    t.text     "status"
+    t.integer  "order_status_id"
+    t.integer  "customer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree
   end
 
   create_table "products", force: :cascade do |t|
@@ -60,13 +71,12 @@ ActiveRecord::Schema.define(version: 20160817062547) do
     t.text     "sub_header"
     t.text     "description"
     t.string   "image"
-    t.integer  "price"
+    t.decimal  "price",            precision: 12, scale: 3
     t.integer  "stock"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_foreign_key "orderitems", "orders"
-  add_foreign_key "orderitems", "products"
   add_foreign_key "orders", "customers"
 end
