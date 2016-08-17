@@ -3,7 +3,7 @@
 <% @products.each do |product| %>
   <p><%= link_to product.name, product_path(product.id) %></p>
   <p><%= product.sub_header %></p>
-  <img><%= product.image %></img>
+  <%= image_tag product.image.to_s %>
   <p><%= product.price %></p>
 <% end %>
 
