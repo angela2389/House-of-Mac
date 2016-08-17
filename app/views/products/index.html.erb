@@ -4,10 +4,10 @@
 <p><%= product.name %></p>
 <p><%= product.sub_header %></p>
 <p><%= product.description %></p>
-<p><img src="<%=product.image%>" alt="edit" /></p>
+<p><img height="100" width="200" src="<%=product.image%>" alt="edit" /></p>
 <p><%= product.price %></p>
 <p><%= product.stock %></p>
 <p><%= product.reference_number %></p>
 
-<%= f.submit "Add to Cart", class: "btn btn-primary" %>
+<%= button_to "Cart" %>
 <% end %>
