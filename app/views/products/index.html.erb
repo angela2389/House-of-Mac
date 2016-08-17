@@ -1,3 +1,20 @@
+<div class="header">
+  <h1>House of MAC</h1>
+</div>
+
+<div class="navbar">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="products">Shop</a></li>
+    <% if !customer_signed_in? %>
+      <li><%= link_to "Log In", new_customer_session_path %></li>
+    <% else %>
+      <li><span class="login-text"><%= current_customer.email %></span></li>
+      <li><%= link_to "Log Out", destroy_customer_session_path, :method => :delete %></li>
+    <% end %>
+  </ul>
+</div>
+
 <h1>Products</h1>
 
 <% @products.each do |product| %>
@@ -8,3 +25,12 @@
 <% end %>
 
 <%= link_to 'Back', root_path %>
+
+<div class="footer">
+  <ul>
+    <li>streetname 123</li>
+    <li>zip code + city</li>
+    <li>phone number</li>
+    <li>email@adres</li>
+  </ul>
+</div>
