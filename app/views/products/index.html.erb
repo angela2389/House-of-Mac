@@ -1,9 +1,37 @@
+<div class="header">
+  <h1>House of MAC</h1>
+</div>
+
+<div class="navbar">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="products">Shop</a></li>
+    <% if !customer_signed_in? %>
+      <li><%= link_to "Log In", new_customer_session_path %></li>
+    <% else %>
+      <li><span class="login-text"><%= current_customer.email %></span></li>
+      <li><%= link_to "Log Out", destroy_customer_session_path, :method => :delete %></li>
+    <% end %>
+    <li><%= render 'layouts/cart_text' %></li>
+  </ul>
+</div>
+
 <h3 class="text-center">Products for Sale</h3>
 
 <div class="row">
   <div class="col-xs-6 col-xs-offset-3">
     <% @products.each do |product| %>
       <%= render "product_row", product: product, order_item: @order_item %>
+      <%= link_to "Back", :back %>
     <% end %>
   </div>
+</div>
+
+<div class="footer">
+  <ul>
+    <li>streetname 123</li>
+    <li>zip code + city</li>
+    <li>phone number</li>
+    <li>email@adres</li>
+  </ul>
 </div>
