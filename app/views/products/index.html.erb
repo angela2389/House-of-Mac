@@ -2,6 +2,9 @@
 
 <% @products.each do |product| %>
   <p><%= link_to product.name, product_path(product.id) %></p>
+  <p><%= product.sub_header %></p>
+  <%= image_tag product.image.to_s %>
+  <p><%= product.price %></p>
 <% end %>
 
 <%= link_to 'Back', root_path %>
