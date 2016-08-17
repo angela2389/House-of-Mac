@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :customer
-  resources :order
+  resources :orders
   get 'welcome/index'
 
   root 'welcome#index'
