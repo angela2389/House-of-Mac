@@ -54,13 +54,6 @@ ActiveRecord::Schema.define(version: 20160817062547) do
     t.index ["customer_id"], name: "index_orders_on_customer_id", using: :btree
   end
 
-  create_table "orders_products", id: false, force: :cascade do |t|
-    t.integer "order_id",    null: false
-    t.integer "product_id",  null: false
-    t.integer "quantity"
-    t.integer "total_price"
-  end
-
   create_table "products", force: :cascade do |t|
     t.integer  "reference_number"
     t.string   "name"

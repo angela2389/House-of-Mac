@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :customer
   resources :order
+  resource :cart
   get 'welcome/index'
 
   root 'welcome#index'
