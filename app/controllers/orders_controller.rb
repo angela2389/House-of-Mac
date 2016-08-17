@@ -1,4 +1,4 @@
-class OrderController < ApplicationController
+class OrdersController < ApplicationController
 
   def new
     @order = Order.new
@@ -17,7 +17,7 @@ class OrderController < ApplicationController
     @order = Order.find (params[:id])
   end
 
-  
+
 
 
 end
