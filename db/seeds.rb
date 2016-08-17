@@ -21,8 +21,8 @@ airportk = Product.create(name: "Airportk", reference_number: 789)
 
 Order.delete_all
 
-order1 = Order.create(customer: ab, deliveryaddress: "Amsterdam", status: "open")
-Orderitem.create(order: order1, product: macbook, quantity: 1)
+order1 = Order.create(customer: ab, deliveryaddress: "Amsterdam", status: "open", totalprice: 20)
+Orderitem.create(order: order1, product: macbook, quantity: 1, subtotal: 10)
 
 
 #, products: Product.where(name: "MacBook")
