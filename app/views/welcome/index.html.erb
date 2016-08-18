@@ -23,7 +23,6 @@
           <li><span class="login-text"><%= current_customer.email %></span></li>
           <li><%= link_to "Log Out", destroy_customer_session_path, :method => :delete %></li>
         <% end %>
-      <li><%= render 'layouts/cart_text' %></li>
       </ul>
     </div>
 
