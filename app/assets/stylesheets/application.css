@@ -27,7 +27,7 @@
 
 .navbar li {
     float: right;
-}
+    font-family: 'Text Me One', sans-serif;}
 
 .navbar li a {
     display: block;
@@ -71,6 +71,7 @@ body{
 
 .footer li {
   color: #333;
+  font-family: 'Text Me One', sans-serif;
 }
 
 .footer img {
