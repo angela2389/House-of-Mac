@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+  
+  def show
+  end
 
   def new
     @order = Order.new
@@ -13,9 +16,6 @@ class OrdersController < ApplicationController
           end
   end
 
-  def show
-    @order = Order.find (params[:id])
-  end
 
 
 
