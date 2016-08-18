@@ -9,22 +9,41 @@
 
 
 
-  <body>
-    <div class="navbar">
-      <ul>
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Shop", products_path %></li>
-        <% if !customer_signed_in? %>
-          <li><%= link_to "Log In", new_customer_session_path %></li>
-        <% else %>
-          <li><span class="login-text"><%= current_customer.email %></span></li>
-          <li><%= link_to "Log Out", destroy_customer_session_path, :method => :delete %></li>
-        <% end %>
-        <li><%= link_to "Cart", cart_path %>
-      </ul>
-    </div>
+<body>
+  <div class="navbar">
+    <ul>
+      <% if !customer_signed_in? %>
+        <li><%= link_to "Log In", new_customer_session_path %></li>
+      <% else %>
+        <li><span class="login-text"><%= current_customer.email %></span></li>
+        <li><%= link_to "Log Out", destroy_customer_session_path, :method => :delete %></li>
+      <% end %>
+      <li><%= link_to "Cart", cart_path %>
+      <li><%= link_to "Shop", products_path %></li>
+      <li style="float:left"><%= link_to "House of Mac", root_path %></li>
+      <li style="float:left"> <img src="http://seeklogo.com/images/A/Apple-logo-4DC2B05F7D-seeklogo.com.gif" /></li>
+    </ul>
+  </div>
 
-    <%= yield %>
+  <div class="main">
+
+  </div>
+
+
+  <div class="footer">
+    <ul>
+      <li><img src="http://seeklogo.com/images/A/Apple-logo-4DC2B05F7D-seeklogo.com.gif" /></li>
+      <li>House of Mac</li>
+      <li>weesperstraat 61</li>
+      <li>1046 HM Amsterdam</li>
+      <li>020 - 555 55 55</li>
+      <li>info@houseofmac.com</li>
+      <li>kvk 2642 5452 364 2</li>
+    </ul>
+
+  </div>
+
+  <%= yield %>
 
   </body>
 </html>

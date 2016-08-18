@@ -26,12 +26,12 @@
 }
 
 .navbar li {
-    float: left;
+    float: right;
 }
 
 .navbar li a {
     display: block;
-    color: white;
+    color: #fff;
     text-align: center;
     padding: 9px 11px;
     text-decoration: none;
@@ -39,4 +39,41 @@
 
 .navbar li a:hover {
     background-color: #111;
+}
+.navbar img {
+  width: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+  margin-top: 50px;
+  margin-bottom: 250px;
+  padding: 25px;
+
+}
+
+.footer ul {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #e6e6e6;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+.footer li {
+  color: #333;
+}
+
+.footer img {
+  width: 30px;
 }
