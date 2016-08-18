@@ -14,11 +14,29 @@
  *= require_self
  */
 
- .header {
-   padding-top: 55px;
-   padding-left: 25px;
-   font-family: 'Poiret One', cursive;
-   font-size: 50px;
-   color: #0073e6;
-   margin-top: -100px;
- }
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 9px 11px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #111;
+}
