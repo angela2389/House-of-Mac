@@ -5,6 +5,7 @@
   <p><%= product.sub_header %></p>
   <%= image_tag product.image.to_s %>
   <p><%= product.price %></p>
+  <a href="/cart/<%= product.id %>"> Add To Cart</a>
 <% end %>
 
 <%= link_to 'Back', root_path %>

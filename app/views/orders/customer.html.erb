@@ -1,0 +1,13 @@
+<h1><%= @customer.handle %></h1>
+
+<br>
+
+<ol>
+  <% @orders.each do |order| %>
+    <li><%= order.product %>,  €<%= booking.total_price %>,-</li>
+  <% end %>
+</ol>
+
+<br>
+
+<%= link_to 'Back', products_path %>
