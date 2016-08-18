@@ -3,12 +3,29 @@
   <head>
     <title>HouseOfMac</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <div class="header">
+    <h1>House of MAC</h1>
+  </div>
+
   <body>
+    <div class="navbar">
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Shop", products_path %></li>
+        <% if !customer_signed_in? %>
+          <li><%= link_to "Log In", new_customer_session_path %></li>
+        <% else %>
+          <li><span class="login-text"><%= current_customer.email %></span></li>
+          <li><%= link_to "Log Out", destroy_customer_session_path, :method => :delete %></li>
+        <% end %>
+        <li><%= link_to "Cart", cart_path %>
+      </ul>
+    </div>
+
     <%= yield %>
 
   </body>

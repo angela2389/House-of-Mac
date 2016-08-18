@@ -8,24 +8,6 @@
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
   </head>
 
-  <body>
-    <div class="header">
-      <h1>House of MAC</h1>
-    </div>
-
-    <div class="navbar">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="products">Shop</a></li>
-        <% if !customer_signed_in? %>
-          <li><%= link_to "Log In", new_customer_session_path %></li>
-        <% else %>
-          <li><span class="login-text"><%= current_customer.email %></span></li>
-          <li><%= link_to "Log Out", destroy_customer_session_path, :method => :delete %></li>
-        <% end %>
-      </ul>
-    </div>
-
     <div class="main">
 
       <img id="imac" src="https://s.s-bol.com/imgbase0/imagebase3/large/FC/3/6/0/6/9200000051196063.jpg" alt="" />
