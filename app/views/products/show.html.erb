@@ -16,8 +16,6 @@
     </ul>
   </div>
 
-
-
 <h1><%= @product.name %></h1>
 <p><%= @product.sub_header %></p>
 <%= image_tag @product.image.to_s %>
@@ -25,6 +23,10 @@
 <p><%= @product.price %></p>
 <p><%= @product.stock %></p>
 <p><%= @product.reference_number %></p>
+
+
+<a href="/cart/<%= @product.id %>"> Add To Cart</a>
+<br>
 
 <%= link_to 'Back', products_path %>
 

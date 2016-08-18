@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :customers
-  resources :products, only: [:index]
-  resource :cart, only: [:show]
-  resources :order_items, only: [:create, :update, :destroy]
-
+  devise_for :customer
+  resources :orders
   get 'welcome/index'
 
   root 'welcome#index'
+
+  get '/cart' => 'cart#index'
+  get '/cart/clear' => 'cart#clearCart'
+  get '/cart/:id' => 'cart#add'
+
+
+  # routes products
 
   get "products" => "products#index"
   get "products/:id" => "products#show", as: :product

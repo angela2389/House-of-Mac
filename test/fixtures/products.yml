@@ -1,9 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  reference_number: 1
   name: MyString
-  price: MyString
+  sub_header: MyText
+  description: MyText
+  image: MyString
+  price: 1
+  stock: 1
 
 two:
+  reference_number: 1
   name: MyString
-  price: MyString
+  sub_header: MyText
+  description: MyText
+  image: MyString
+  price: 1
+  stock: 1
