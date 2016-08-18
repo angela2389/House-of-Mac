@@ -14,11 +14,66 @@
  *= require_self
  */
 
- .header {
-   padding-top: 55px;
-   padding-left: 25px;
-   font-family: 'Poiret One', cursive;
-   font-size: 50px;
-   color: #0073e6;
-   margin-top: -100px;
- }
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 95%;
+}
+
+.navbar li {
+    float: right;
+    font-family: 'Text Me One', sans-serif;}
+
+.navbar li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 9px 11px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #111;
+}
+.navbar img {
+  width: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+  margin-top: 50px;
+  margin-bottom: 250px;
+  padding: 25px;
+
+}
+
+.footer ul {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #e6e6e6;
+  bottom: 0;
+  padding: 20px;
+}
+
+.footer li {
+  color: #333;
+  font-family: 'Text Me One', sans-serif;
+}
+
+.footer img {
+  width: 30px;
+}

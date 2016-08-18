@@ -1,20 +1,14 @@
-<h1>Products</h1>
+<div class="main">
 
 <% @products.each do |product| %>
-  <p><%= link_to product.name, product_path(product.id) %></p>
-  <p><%= product.sub_header %></p>
-  <%= image_tag product.image.to_s %>
-  <p><%= product.price %></p>
-  <a href="/cart/<%= product.id %>"> Add To Cart</a>
+<h1><%= link_to product.name, product_path(product.id) %></h1>
+<h3><%= product.sub_header %></h3>
+<%= image_tag product.image.to_s %>
+<p><%= product.price %></p>
+<a href="/cart/<%= product.id %>"> <img src="http://www.graphicsfuel.com/wp-content/uploads/2012/01/shopping-cart-icon-515.png" alt="" /></a>
+<br>
+<br>
 <% end %>
+</div>
 
 <%= link_to 'Back', root_path %>
-
-<div class="footer">
-  <ul>
-    <li>streetname 123</li>
-    <li>zip code + city</li>
-    <li>phone number</li>
-    <li>email@adres</li>
-  </ul>
-</div>
