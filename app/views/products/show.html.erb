@@ -1,4 +1,5 @@
-<body>
+<div class="main">
+
 
 <h1><%= @product.name %></h1>
 <p><%= @product.sub_header %></p>
@@ -9,7 +10,8 @@
 <p><%= @product.reference_number %></p>
 
 
-<a href="/cart/<%= @product.id %>"> Add To Cart</a>
+<a href="/cart/<%= @product.id %>"> <img src="http://www.graphicsfuel.com/wp-content/uploads/2012/01/shopping-cart-icon-515.png" alt="" /></a>
 <br>
+</div>
 
 <%= link_to 'Back', products_path %>
