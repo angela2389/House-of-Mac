@@ -1,6 +1,8 @@
 <h1>Order list</h1>
 
+<% totalprice = 0 %>
 <% @cart.each do |k, v| %>
+
 <% Product.find([k]).pluck(:name).join(" ") %>
 <% @c = Product.find([k]).pluck(:id).join(" ") %>
 <% @p = Product.find([k]).pluck(:price).join(" ") %>
@@ -8,10 +10,17 @@
 <% Orderitem.create(order: @order, product_id: @c, quantity: @q, subtotal: @p) %>
 Ordered items: <%= Product.find([k]).pluck(:name).join(" ") %>
 <br>
-Price: € <%= @p *@q %>
-<br><br>
+Quantity: <%= @q %>
+<br>
+Product price: €<%= subtotal = @p.to_i * @q %>
+<br>
+<br>
+<% totalprice = totalprice + subtotal %>
 <% end %>
+<% @order.update_attributes( totalprice: totalprice ) %>
 
 <br>
-Order id: <%= @order.id %>
+<b> Total price: € <%= totalprice %>
 <br>
+<br>
+Order id: <%= @order.id %></b>
