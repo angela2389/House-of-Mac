@@ -41,4 +41,9 @@ class CartController < ApplicationController
       @cart = {}
     end
   end
+
+  def checkout
+      @cart = session[:cart]
+      @order = Order.create(customer: current_customer  , deliveryaddress: "Zoetermeer", status: "open", totalprice: 200)
+  end
 end
