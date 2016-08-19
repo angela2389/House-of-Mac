@@ -21,7 +21,7 @@ class CartController < ApplicationController
     cart = session[:cart]
 
     if cart[id] == 1
-      session.id.delete :cart
+      cart.delete(id)
     else
       cart[id] = cart[id] - 1
     end
