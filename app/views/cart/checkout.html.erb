@@ -12,10 +12,10 @@ Ordered items: <%= Product.find([k]).pluck(:name).join(" ") %>
 <br>
 Quantity: <%= @q %>
 <br>
-Product price: €<%= subtotal = @p.to_i * @q %>
+Price: €<%= @subtotal = @p.to_i * @q %>
 <br>
 <br>
-<% totalprice = totalprice + subtotal %>
+<% totalprice = totalprice + @subtotal %>
 <% end %>
 <% @order.update_attributes( totalprice: totalprice ) %>
 
