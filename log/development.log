@@ -23109,3 +23109,240 @@ Processing by CartController#checkout as HTML
 Completed 200 OK in 58ms (Views: 42.8ms | ActiveRecord: 6.9ms)
 
 
+Started GET "/" for ::1 at 2016-08-19 16:44:36 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 200 OK in 552ms (Views: 536.4ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/cart" for ::1 at 2016-08-19 16:44:38 +0200
+Processing by CartController#index as HTML
+  Rendering cart/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendered cart/index.html.erb within layouts/application (51.3ms)
+Completed 200 OK in 79ms (Views: 71.2ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/cart/23" for ::1 at 2016-08-19 16:44:48 +0200
+Processing by CartController#add as HTML
+  Parameters: {"id"=>"23"}
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/cart" for ::1 at 2016-08-19 16:44:48 +0200
+Processing by CartController#index as HTML
+  Rendering cart/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendered cart/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 69ms (Views: 66.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/cart/remove/23" for ::1 at 2016-08-19 16:44:49 +0200
+Processing by CartController#remove as HTML
+  Parameters: {"id"=>"23"}
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/cart" for ::1 at 2016-08-19 16:44:49 +0200
+Processing by CartController#index as HTML
+  Rendering cart/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendered cart/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 55ms (Views: 50.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cart/remove/23" for ::1 at 2016-08-19 16:44:49 +0200
+Processing by CartController#remove as HTML
+  Parameters: {"id"=>"23"}
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/cart" for ::1 at 2016-08-19 16:44:49 +0200
+Processing by CartController#index as HTML
+  Rendering cart/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendered cart/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 58ms (Views: 53.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cart/remove/23" for ::1 at 2016-08-19 16:44:49 +0200
+Processing by CartController#remove as HTML
+  Parameters: {"id"=>"23"}
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/cart" for ::1 at 2016-08-19 16:44:49 +0200
+Processing by CartController#index as HTML
+  Rendering cart/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendered cart/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 76ms (Views: 71.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products" for ::1 at 2016-08-19 16:44:51 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (3.0ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 200 OK in 53ms (Views: 49.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/cart/22" for ::1 at 2016-08-19 16:44:55 +0200
+Processing by CartController#add as HTML
+  Parameters: {"id"=>"22"}
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/cart" for ::1 at 2016-08-19 16:44:55 +0200
+Processing by CartController#index as HTML
+  Rendering cart/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendered cart/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 47ms (Views: 43.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/cart/checkout" for ::1 at 2016-08-19 16:45:10 +0200
+Processing by CartController#checkout as HTML
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("customer_id", "deliveryaddress", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["customer_id", 18], ["deliveryaddress", "Hoorn"], ["status", "Closed"], ["created_at", 2016-08-19 14:45:10 UTC], ["updated_at", 2016-08-19 14:45:10 UTC]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering cart/checkout.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "orderitems" ("order_id", "product_id", "quantity", "subtotal", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["order_id", 154], ["product_id", 23], ["quantity", 6], ["subtotal", 1050], ["created_at", 2016-08-19 14:45:10 UTC], ["updated_at", 2016-08-19 14:45:10 UTC]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "orderitems" ("order_id", "product_id", "quantity", "subtotal", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["order_id", 154], ["product_id", 22], ["quantity", 2], ["subtotal", 1350], ["created_at", 2016-08-19 14:45:10 UTC], ["updated_at", 2016-08-19 14:45:10 UTC]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "orders" SET "updated_at" = $1, "totalprice" = $2 WHERE "orders"."id" = $3[0m  [["updated_at", 2016-08-19 14:45:10 UTC], ["totalprice", 9000], ["id", 154]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendered cart/checkout.html.erb within layouts/application (55.3ms)
+Completed 200 OK in 131ms (Views: 65.6ms | ActiveRecord: 29.1ms)
+
+
+Started GET "/" for ::1 at 2016-08-19 17:00:12 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 200 OK in 262ms (Views: 244.7ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/cart" for ::1 at 2016-08-19 17:00:15 +0200
+Processing by CartController#index as HTML
+  Rendering cart/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendered cart/index.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 103ms (Views: 93.3ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/products" for ::1 at 2016-08-19 17:00:16 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (4.6ms)
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 45.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products/24" for ::1 at 2016-08-19 17:00:18 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 200 OK in 49ms (Views: 43.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cart/24" for ::1 at 2016-08-19 17:00:21 +0200
+Processing by CartController#add as HTML
+  Parameters: {"id"=>"24"}
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/cart" for ::1 at 2016-08-19 17:00:21 +0200
+Processing by CartController#index as HTML
+  Rendering cart/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendered cart/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 61ms (Views: 56.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/cart/checkout" for ::1 at 2016-08-19 17:00:25 +0200
+Processing by CartController#checkout as HTML
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "orders" ("customer_id", "deliveryaddress", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["customer_id", 18], ["deliveryaddress", "Hoorn"], ["status", "Closed"], ["created_at", 2016-08-19 15:00:25 UTC], ["updated_at", 2016-08-19 15:00:25 UTC]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering cart/checkout.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "orderitems" ("order_id", "product_id", "quantity", "subtotal", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["order_id", 155], ["product_id", 23], ["quantity", 6], ["subtotal", 1050], ["created_at", 2016-08-19 15:00:25 UTC], ["updated_at", 2016-08-19 15:00:25 UTC]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "orderitems" ("order_id", "product_id", "quantity", "subtotal", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["order_id", 155], ["product_id", 22], ["quantity", 2], ["subtotal", 1350], ["created_at", 2016-08-19 15:00:25 UTC], ["updated_at", 2016-08-19 15:00:25 UTC]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "orderitems" ("order_id", "product_id", "quantity", "subtotal", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["order_id", 155], ["product_id", 24], ["quantity", 1], ["subtotal", 280], ["created_at", 2016-08-19 15:00:25 UTC], ["updated_at", 2016-08-19 15:00:25 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "orders" SET "updated_at" = $1, "totalprice" = $2 WHERE "orders"."id" = $3[0m  [["updated_at", 2016-08-19 15:00:25 UTC], ["totalprice", 9280], ["id", 155]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendered cart/checkout.html.erb within layouts/application (61.6ms)
+Completed 200 OK in 147ms (Views: 79.5ms | ActiveRecord: 30.9ms)
+
+
