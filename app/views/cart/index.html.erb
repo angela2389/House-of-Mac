@@ -12,7 +12,7 @@
     <td>Total price</td>
   </tr>
 
-<%= @cart  %> 
+<%= @cart  %>
 <% @cart.each do | id, quantity | %>
   <% product = Product.find_by_id(id) %>
 <tr>
@@ -29,3 +29,5 @@
 
 
 <b>Total shopping cart:<%=number_to_currency(total, :unit => "€")%></b>
+
+<p><a id="create" class="button" href="/orders">Confirm order</a></p>

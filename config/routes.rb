@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :customer
   resources :orders
-
+  resources :orderitems
 
   root 'welcome#index'
   get 'welcome/index'
@@ -15,4 +15,8 @@ Rails.application.routes.draw do
 # routes products
   get "products" => "products#index"
   get "products/:id" => "products#show", as: :product
+
+  get "/orders" => "orders#show"
+  post 'orderitems/create' => 'orderitems#create'
+
 end

@@ -41,6 +41,7 @@ airport = Product.create(
 Order.delete_all
 
 order1 = Order.create(customer: ab, deliveryaddress: "Amsterdam", status: "open", totalprice: 20)
+
 Orderitem.create(order: order1, product: macbook, quantity: 1, subtotal: 10)
 
 
