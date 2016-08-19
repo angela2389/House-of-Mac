@@ -1,88 +1,11 @@
-
-
-.navbar ul {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: right;
-  border-top: 1px solid #00e68a;
-  border-bottom: 1px solid #00e68a;
-  font-family: 'Dosis', sans-serif;
+.img img {
+  width: 75%;
+  padding-left: 15%;
 }
 
-.navbar li {
-  display: inline;
-  padding-left: 30px;
-  padding-right: 50px;
-}
-
-.main {
-  display: inline-block;
-}
-
-
-#imac {
-  height: 350px;
-  padding-left: 50px;
-}
-
-#imac:hover {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
-
-#macbook {
-  height: 350px;
-}
-
-#macbook:hover {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
-
-#ipad {
-  height: 350px;
-}
-
-#ipad:hover {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
-
-#iphone {
-  height: 350px;
-  padding-left: 50px;
-}
-
-#iphone:hover {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
-
-#ipod {
-  height: 350px;
-}
-
-#ipod:hover {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
-
-#acces {
-  height: 250px;
-}
-
-#acces:hover {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
-
-.footer {
-  font-family: 'Dosis', sans-serif;
-  border-top:  1px solid #00e68a;
-}
-
-.footer ul {
-  list-style-type: none;
-  color: #0073e6;
-  float: right;
+.text {
+  text-align: center;
+  font-family: 'Text Me One', sans-serif;
+  font-size: 150%;
+  color: #333;
 }

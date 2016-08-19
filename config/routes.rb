@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get '/cart/:id' => 'cart#add'
   get '/cart/remove/:id' => 'cart#remove'
 
-
 # routes products
   get "products" => "products#index"
   get "products/:id" => "products#show", as: :product
