@@ -8,9 +8,11 @@ Rails.application.routes.draw do
 
 # routes cart
   get '/cart' => 'cart#index'
+  get '/cart/checkout' => 'cart#checkout'
   get '/cart/clear' => 'cart#clearCart'
   get '/cart/:id' => 'cart#add'
   get '/cart/remove/:id' => 'cart#remove'
+
 
 # routes products
   get "products" => "products#index"

@@ -15526,3 +15526,238 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/cart" for ::1 at 2016-08-19 09:32:37 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CartController#index as HTML
+  Rendering cart/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  Rendered cart/index.html.erb within layouts/application (47.4ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    16: <% @cart.each do | id, quantity | %>
+    17:   <% product = Product.find_by_id(id) %>
+    18: <tr>
+    19:   <td><%= link_to product.name, product %></td>
+    20:   <td><%= number_to_currency(product.price, :unit => "€")%></td>
+    21:   <td><a href="/cart/remove/<%= product.id %>"> - </a> <%=quantity%><a href="/cart/<%= product.id %>"> + </a>
+    22: </td>
+  
+app/views/cart/index.html.erb:19:in `block in _app_views_cart_index_html_erb___1159198185315410872_70175066135340'
+app/views/cart/index.html.erb:16:in `each'
+app/views/cart/index.html.erb:16:in `_app_views_cart_index_html_erb___1159198185315410872_70175066135340'
+  Rendering /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.0ms)
+Started GET "/" for ::1 at 2016-08-19 09:32:39 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 200 OK in 482ms (Views: 477.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/products" for ::1 at 2016-08-19 09:32:42 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (4.9ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/cart/23" for ::1 at 2016-08-19 09:32:43 +0200
+Processing by CartController#add as HTML
+  Parameters: {"id"=>"23"}
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/cart" for ::1 at 2016-08-19 09:32:43 +0200
+Processing by CartController#index as HTML
+  Rendering cart/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  Rendered cart/index.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    16: <% @cart.each do | id, quantity | %>
+    17:   <% product = Product.find_by_id(id) %>
+    18: <tr>
+    19:   <td><%= link_to product.name, product %></td>
+    20:   <td><%= number_to_currency(product.price, :unit => "€")%></td>
+    21:   <td><a href="/cart/remove/<%= product.id %>"> - </a> <%=quantity%><a href="/cart/<%= product.id %>"> + </a>
+    22: </td>
+  
+app/views/cart/index.html.erb:19:in `block in _app_views_cart_index_html_erb___1159198185315410872_70175036331900'
+app/views/cart/index.html.erb:16:in `each'
+app/views/cart/index.html.erb:16:in `_app_views_cart_index_html_erb___1159198185315410872_70175036331900'
+  Rendering /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.1ms)
+Started GET "/" for ::1 at 2016-08-19 10:21:47 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 259ms (Views: 248.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2016-08-19 10:21:49 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 69ms (Views: 48.5ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/cart/23" for ::1 at 2016-08-19 10:21:51 +0200
+Processing by CartController#add as HTML
+  Parameters: {"id"=>"23"}
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/cart" for ::1 at 2016-08-19 10:21:51 +0200
+Processing by CartController#index as HTML
+  Rendering cart/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendered cart/index.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 108ms (Views: 78.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cart" for ::1 at 2016-08-19 10:21:58 +0200
+Processing by CartController#index as HTML
+  Rendering cart/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendered cart/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/cart" for ::1 at 2016-08-19 10:24:35 +0200
+Processing by CartController#index as HTML
+  Rendering cart/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendered cart/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 60ms (Views: 57.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cart/checkout" for ::1 at 2016-08-19 10:24:38 +0200
+Processing by CartController#checkout as HTML
+  Rendering cart/checkout.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (6.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendered cart/checkout.html.erb within layouts/application (59.9ms)
+Completed 200 OK in 107ms (Views: 89.6ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/cart/checkout" for ::1 at 2016-08-19 10:24:46 +0200
+Processing by CartController#checkout as HTML
+  Rendering cart/checkout.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendered cart/checkout.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 38ms (Views: 35.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cart/checkout" for ::1 at 2016-08-19 10:25:49 +0200
+Processing by CartController#checkout as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 2.2ms)
+
+
+  
+NameError (undefined local variable or method ` end' for #<CartController:0x007fa306bfde60>):
+  
+app/controllers/cart_controller.rb:48:in `checkout'
+  Rendering /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Angela/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (95.5ms)
+Started GET "/cart/checkout" for ::1 at 2016-08-19 10:26:07 +0200
+Processing by CartController#checkout as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering cart/checkout.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35mSQL (5.2ms)[0m  [1m[32mINSERT INTO "orderitems" ("product_id", "quantity", "subtotal", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["product_id", 23], ["quantity", 1], ["subtotal", 10], ["created_at", 2016-08-19 08:26:07 UTC], ["updated_at", 2016-08-19 08:26:07 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendered cart/checkout.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 85ms (Views: 57.7ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/" for ::1 at 2016-08-19 10:26:14 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2016-08-19 10:26:16 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 44ms (Views: 38.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/cart" for ::1 at 2016-08-19 10:26:18 +0200
+Processing by CartController#index as HTML
+  Rendering cart/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendered cart/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cart/checkout" for ::1 at 2016-08-19 10:26:20 +0200
+Processing by CartController#checkout as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering cart/checkout.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "orderitems" ("product_id", "quantity", "subtotal", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["product_id", 23], ["quantity", 1], ["subtotal", 10], ["created_at", 2016-08-19 08:26:20 UTC], ["updated_at", 2016-08-19 08:26:20 UTC]]
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendered cart/checkout.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 57ms (Views: 43.6ms | ActiveRecord: 8.9ms)
+
+
+  [1m[35mSQL (4.1ms)[0m  [1m[31mDELETE FROM "orders"[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[31mDELETE FROM "orderitems"[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[31mDELETE FROM "orders"[0m

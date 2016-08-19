@@ -1,0 +1,9 @@
+<%= form_for @order do |f| %>
+
+<div class="field">
+  <p> Delivery address: </p>
+  <%= f.text_area :deliveryaddress, cols: "30", rows: "8" %>
+</div>
+<%= f.submit 'Complete order'%>
+
+<%end%>
