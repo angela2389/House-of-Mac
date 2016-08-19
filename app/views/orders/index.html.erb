@@ -1,0 +1,14 @@
+<h1>Your orders</h1>
+
+<table>
+  <tr>
+    <td>Name</td>
+    <td>Total price</td>
+  </tr>
+  <% @orderitems.each do |item| %>
+    <tr>
+      <td><%= item.order.customer.name %></td>
+      <td><%= item.order.totalprice %></td>
+    </tr>
+  <% end %>
+</table>

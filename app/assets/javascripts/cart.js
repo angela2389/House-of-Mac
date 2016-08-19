@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.remove').click(function() {
+  $('.create').click(function() {
      var id = $(this).getAttribute('id');
   });
 });
